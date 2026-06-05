@@ -1,0 +1,57 @@
+﻿@model ExampleSession.Models.Vendor.Vendor_Default
+
+@{
+    ViewBag.Title = "Add_Vendor";
+    Layout = "~/Views/Shared/ManagerZone.cshtml";
+}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-8 text-center">
+        <h2 class="text-danger fa fa-power-off" style="padding-top:10%">Add Vendor Details</h2>
+        <hr />
+        @using (Html.BeginForm("Add_Vendor", "Manager", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-4"></div>
+                    <div class="col-6 text-center">
+                        @Html.LabelFor(model => model.Vendor_Name)
+                        @Html.TextBoxFor(model => model.Vendor_Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_Name, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_Email)
+                        @Html.TextBoxFor(model => model.Vendor_Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_Email, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_mobile)
+                        @Html.TextBoxFor(model => model.Vendor_mobile, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_mobile, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_Location)
+                        @Html.TextBoxFor(model => model.Vendor_Location, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_Location, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_adhar)
+                        @Html.TextBoxFor(model => model.Vendor_adhar, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_adhar, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_password)
+                        @Html.TextBoxFor(model => model.Vendor_password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_password, "", new { style = "color:red" })
+
+                        @Html.LabelFor(model => model.Vendor_Confirm_password)
+                        @Html.TextBoxFor(model => model.Vendor_Confirm_password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Vendor_Confirm_password, "", new { style = "color:red" })
+
+                        <br />
+                        <input type="submit" class="form-control btn btn-outline-danger" value="Add Vendor" />
+                        <br />
+                    </div>
+                </div>
+                <h3>@ViewBag.msg</h3>
+            </div>
+        }
+        <div class="col-2"></div>
+    </div>
+</div>
+

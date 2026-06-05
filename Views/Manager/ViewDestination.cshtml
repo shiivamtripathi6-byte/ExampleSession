@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ExampleSession.Models.Vendor.ViewDestination>
+@{
+    ViewBag.Title = "ViewDestination";
+    Layout = "~/Views/Shared/ManagerZone.cshtml";
+}
+<link href="~/Content/akash.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <h2 class="text-center text-danger text"> View Destination</h2>
+        <hr />
+        <table class="table table-responsive" id="example">
+            <thead class="table-striped">
+                <tr style="background:orangered; color:white">
+                    <th> Name</th>
+                    <th>About</th>
+                    <th>Price</th>
+                    <th>Duration</th>
+
+                    <th>Date</th>
+                    <th>Picture</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var i in Model)
+                {
+                    <tr>
+                        <td>@i.Destination_Name</td>
+                        <td>@i.about</td>
+                        <td>@i.price</td>
+                        <td>@i.duration</td>
+                        <td>@ViewBag.dt</td>
+                        <td>
+                            <img src="/Content/Upload/@i.image" style="height:80px" class="img img-thumbnail" />   
+                        </td>
+                       
+                    </tr>
+                }
+            </tbody>
+        </table> 
+    </div>
+</div>
+<script src="~/Scripts/akash.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable();
+    });
+</script>

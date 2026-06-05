@@ -1,0 +1,59 @@
+﻿
+    .dash-card {
+        border-radius: 16px;
+        padding: 30px 20px;
+        text-align: center;
+        color: #fff;
+        min-height: 200px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    }
+
+        .dash-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,.25);
+        }
+
+    .dash-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .dash-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    .bg-gradient-blue {
+        background: linear-gradient(135deg, #2196f3, #1e88e5);
+    }
+
+    .bg-gradient-green {
+        background: linear-gradient(135deg, #43a047, #2e7d32);
+    }
+
+    .bg-gradient-purple {
+        background: linear-gradient(135deg, #8e24aa, #6a1b9a);
+    }
+
+    .bg-gradient-orange {
+        background: linear-gradient(135deg, #fb8c00, #ef6c00);
+    }
+
+    .bg-gradient-red {
+        background: linear-gradient(135deg, #e53935, #c62828);
+    }
+
+    a.dashboard-link {
+        text-decoration: none;
+    }
+    .spn{
+        font-size:50px;
+        padding:3%;
+        text-align:center;
+    }
+    .spntext{
+        font-size:23px;
+        font-family:'Times New Roman';
+    }

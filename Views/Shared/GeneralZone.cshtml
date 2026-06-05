@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row header1">
+            <div class="col-12 bg-primary text-light text-center" style="padding:2%;">
+               <span class="fa fa-phone text-center">6306199011,9936796369</span><span>Welcome in Uttrakhand Tour and travel services</span>  
+            </div>  
+        </div> 
+        <div class="row header">
+            <div class="col-12 bg-body-secondary" style="padding:0%">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="row text-center">
+                        <div class="col-4">
+                       <h1><img src="~/content/images/uttarakhand.jpeg" alt="uttrakhand" height="85px" width="100px"/><span class="text-primary" style="font-family:sans-serif">Uttrakhand</span><span style="font-family:'Monotype Corsiva'">tourism</span></h1> 
+                        </div>
+                        <div class="col-8" style="padding-left:8%">
+                            <nav class="navbar navbar-expand-sm">
+                                <div class="container-fluid">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item"><a class="nav-link active" href="~/Home/Index"><span class="fa fa-home">HOME</span></a> </li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Home/AboutUs"><span class="fa fa-book" >ABOUT US</span></a> </li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Home/Gallery"><span class="fa fa-image" >GALLERY</span></a> </li>
+                                        <li class="nav-item"><a class="nav-link disabled" href="~/Home/Story"><span class="fa fa-book" > STORY</span></a> </li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Home/ContactUs"><span class="fa fa-phone-square">CONTACT US</span></a> </li>
+                                        <li class="nav-item"><a class="nav-link" href="~/Home/Login"><span class="fa fa-lock">SIGN IN</span></a> </li>
+                                    </ul>
+                                </div>
+                            </nav>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="row my_name">
+             
+    </div>
+        <div class="row main">
+            @RenderBody()
+        </div> 
+        <div class="row footer bg-dark text-light" style="padding:4%">
+            <div class="col-4">
+                Uttarakhand Tourism Development Board, Pt. Deen Dayal
+                Upadhyay Paryatan Bhawan Near ONGC Helipad, Garhi Cantt,
+                Dehradun, Uttarakhand 248001
+            </div>
+           <div class="col-4">
+               <span class="fa fa-envelope-square text-center"></span>
+               publicityutdb@gmail.com | publicityofficer@utdbofficial.com
+           </div>
+           <div class="col-4">
+               <span class="fa fa-phone-square text-center" style="font-weight:bolder"></span><br />
+               +91 135-2559898, 2559987
+           </div>
+            <br />
+            <hr class="bg-light"/>
+            <div class="col-3">
+               <h5><ul>Quick Links</ul></h5> <br />
+               <li>Press Release</li> 
+                <li>Citizen Charter</li>
+               <li> Policy and Guidelines</li>
+                <li>SIHM New Tehri</li>
+                <li>Awards & Honours</li>
+                <li>Important Link</li>
+                <li>Contact Us</li><br />
+                <h4><ul>Homestay</ul></h4>
+               <li>Homestay Booking</li>
+                <li>Homestay Policies</li>
+               <li> Homestay Registration</li><br />
+                <h4><ul>Traveltrade</ul></h4>
+                <li>Traveltrade Registration</li>
+                <li>Travel Mart 2024 - 2025</li><br />
+            </div>
+            <div class="col-4">
+                <h5><ul>RTI</ul></h5><br />
+                <li>RTI Manual</li>
+                <li>Right to Service</li>
+                <li>Right to Information</li>
+                <li>Market Research and Statistics</li><br />
+                <h5><ul>Department of Tourism</ul></h5>
+                <li>ADB SICRTD Report</li>
+                <li>Tenders/EOI</li>
+                <li>Annual Transfer</li>
+                <li>Vacancy</li>
+                <li>Tourist Map</li><br />
+                <h5><ul>Schemes/Policies</ul></h5>
+                <li>Apply for Veer Chandra Singh Garhwali & Pt. Deen Dayal Homestay Scheme</li>
+                <li>Tourism Policy</li><br />
+            </div>
+            <div class="col-5">
+                <h5><ul>Invest Trade</ul></h5>
+                <li>Invest In Uttarakhand Tourism</li>
+                <li>Uttarakhand Tourism Entrepreneur Incentive Scheme Operational Guidelines - 2024</li><br />
+                <h5><ul>Skill Development & Training Programs</ul></h5>
+                <li>Training Programs</li><br />
+                <h5><ul>Adventures</ul></h5>
+                <li>Trek of the Year 2025 (Pithoragarh Chamoli Uttarkashi)</li><br />
+            </div>
+           <br />
+            <div class="row">
+                <div class="col-12 text-center">
+               <span class="fa fa-facebook text-center"></span>
+                <span class="fa fa-camera text-center"></span> 
+                <span class="fa fa-instagram text-center"></span>
+                <span class="fa fa-youtube-play text-center"></span>
+                    <img src="~/Content/images/logo1.jpeg" alt="logo1" height="90px" width="120px" style="background:black"></div>
+                </div>
+            <br />
+            <hr class="bg-light" />
+                <div class="col-5">
+                    <h6 style="font-size:12px">© 2025 Uttarakhand Toursim | All Rights Reserved</h6>
+                </div>
+                <div class="col-2"></div>
+            <div class="col-5" style="font-size:12px">
+                <span>Website PolicyAccessibility Statement</span><br />
+
+                <span>Designed and Developed by</span><br />
+                <span>Drish Infotech Ltd.</span>
+            </div>
+            </div>
+</body>
+</html>

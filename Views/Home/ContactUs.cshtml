@@ -1,0 +1,39 @@
+﻿@model ExampleSession.Models.Home.Contact
+
+@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/GeneralZone.cshtml";
+}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="box-shadow:0px 0px 10px 0px grey; padding:5%; margin-top:2%">
+        <h1 class="text text-success" style="font-family: 'Monotype Corsiva'; font-weight:bolder"><span class="fa fa-key"></span>Contact Panel Here</h1>
+        <hr style="background:maroon; height:3px" />
+        @using (Html.BeginForm("ContactUs", "Home", FormMethod.Post))
+        {
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control-lg form-control" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Mobile)
+            @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control-lg form-control" })
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Message)
+            @Html.TextBoxFor(model => model.Message, new { @class = "form-control-lg form-control" })
+            @Html.ValidationMessageFor(model => model.Message, "", new { style = "color:red" })
+            <br />
+            <button class="btn btn-primary form-floating form-control form-control-lg">
+                <span class="text-light"></span>
+                Enquiry Now
+            </button>
+            <br />
+            <h3>@ViewBag.msg</h3>
+        }
+    </div>
+</div>

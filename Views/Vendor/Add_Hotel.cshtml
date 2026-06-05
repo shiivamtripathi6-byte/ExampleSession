@@ -1,0 +1,59 @@
+﻿@model ExampleSession.Models.Vendor.Add_Hotel
+@{
+    ViewBag.Title = "Add_Hotel";
+    Layout = "~/Views/Shared/VendorZone.cshtml";
+}
+
+<div class="row" style="padding:4%">
+    <div class="col-4"></div>
+    <div class="col-4" style="box-shadow:0px 0px 10px 0px grey; padding:3%; margin-top:2%">
+        <h2 class="text text-success text-center bg-danger" style="padding:2%;">Add_Hotel Details</h2>
+        <hr style="background:maroon; height:3px" />
+        @using (Html.BeginForm("Add_places", "Vendor", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Hotel_Location)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Hotel_Location, new { @class = "form-control", Readonly = true })
+                @Html.ValidationMessageFor(model => model.Hotel_Location)
+            </div>
+            <br />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Hotel_Name)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Hotel_Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Hotel_Name)
+            </div>
+            <br />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Hotel_Price)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Hotel_Price, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Hotel_Price)
+            </div>
+            <br />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Hotel_Address)
+            </div>
+
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Hotel_Address, new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Hotel_Address)
+            </div>
+            <br />
+            <p>
+                <input type="submit" value="Add Destination" class="btn btn-danger form-control" />
+            </p>
+
+        }
+    </div>
+</div         

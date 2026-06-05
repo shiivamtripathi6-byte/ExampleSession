@@ -1,0 +1,114 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+   <script src="~/Scripts/bootstrap.min.js"></script>
+
+    
+    <style>
+        .admin-navbar {
+            background: linear-gradient(90deg, #004fff, #008ffd); /* dark rich green */
+            box-shadow: 0 4px 15px rgba(0, 40, 0, 0.45); /* deep green shadow */
+        }
+
+
+        .nav-link {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border-radius: 8px;
+            transition: 0.3s;
+            color: #fff !important;
+        }
+
+            .nav-link:hover {
+                background: rgba(255,255,255,0.2);
+                box-shadow: 0px 0px 10px rgba(255,255,255,0.7);
+            }
+
+        .brand-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #fff !important;
+            text-shadow: 0px 0px 8px rgba(255,255,255,0.8);
+        }
+
+        .logout-btn {
+            background: #dc3545;
+            box-shadow: 0 0 12px rgba(255,0,0,0.8);
+        }
+
+            .logout-btn:hover {
+                opacity: 0.9;
+                box-shadow: 0 0 18px rgba(255,0,0,1);
+            }
+    </style>
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-lg navbar-dark admin-navbar">
+            <div class="container-fluid">
+
+                <a class="navbar-brand brand-title" href="#">
+                    <i class="fa fa-dashboard"></i> ManagerZone
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="managerNav">
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Vendor/Add_Vendor"> Add Vendor</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Add Notification</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Manager/View_Vendor">View Vendor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View Complain</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View Feedback</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/Vendor/Change_Password">Change Password</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link logout-btn text-white ms-2" href="#"> Logout</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </body>
+      <div class="row main">
+            @RenderBody()
+        </div>
+</body>
+</html>

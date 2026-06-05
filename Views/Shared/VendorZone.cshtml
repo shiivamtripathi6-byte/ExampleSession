@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   
+</head>
+<body>
+    <nav class="navbar bg-secondary text-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Offcanvas navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header bg-dark text-light">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close text-light" style="color:white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body text-light" style="background:grey">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="~/Vendor/Dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" aria-current="page" href="~/Vendor/Add_places">Add Destination</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="~/Vendor/Complain">Vendor Complain</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="~/Vendor/Change_Password">Change Password</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="~/Vendor/Add_Hotel">Add Hotel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="~/Home/Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="/Vendor/Logout">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="~/Vendor/View_Destination">View Destination</a>
+                        </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="row main">
+        @RenderBody()
+    </div>
+   </body>
+</html>

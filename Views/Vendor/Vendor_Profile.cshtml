@@ -1,0 +1,54 @@
+﻿@model ExampleSession.Models.Vendor.Vendor_Default
+@{
+    ViewBag.Title = "Vendor_Profile";
+    Layout = "~/Views/Shared/VendorZone.cshtml";
+}
+
+<h2>Vendor_Profile</h2>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10" style="margin:4%">
+        <h2><span class="fa fa-user-circle-o text-info"></span>Vendor Profile Panel Here</h2>
+        <hr />
+        @using(Html.BeginForm("Vendor_Profile","Vendor",FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-6">
+                    <span>S.N</span>
+                    <input type="text" class="form-control" readonly value="@ViewBag.vid" />
+                    <span>Vendor Status</span>
+                    <input type="text" class="form-control" readonly value="@ViewBag.status" />
+                    <span>Vendor Name</span>
+                    @Html.TextBoxFor(model => model.Vendor_Name, new { @class="form-control" })
+                    <span>Vendor Mobile Number</span>
+                    @Html.TextBoxFor(model => model.Vendor_mobile, new { @class = "form-control" })
+                    <span>Vendor adhar Number</span>
+                    @Html.TextBoxFor(model => model.Vendor_adhar, new { @class = "form-control" })
+                </div>
+                <div class="col-6">
+                    <span>Date</span>
+                    <input type="text" class="form-control" readonly value="@ViewBag.vdate" />
+                    <span>Vendor Email</span>
+                    @Html.TextBoxFor(model => model.Vendor_Email, new { @class = "form-control"})
+                    <span>Vendor Location</span>
+                    <input type="text" class="form-control" readonly value="@ViewBag.Vlocation" />
+                    <span>Vendor Password</span>
+                    @Html.TextBoxFor(model => model.Vendor_password, new { @class = "form-control" })
+                    <br />
+                    <input type="button" id="btnEdit" class="btn btn-success form-control text-light" value="Edit" />
+                    <input type="submit" id="btnUpdate" class="btn btn-warning" value="Update" />  
+                    <h4>@ViewBag.show</h4>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btnUpdate").hide();
+        $("#btnEdit").click(function () {
+            $("#Vendor_Name,#Vendor_Email,#Vendor_mobile").attr("Readonly", false);
+            $("#btnUpdate").show(); $("#btnEdit").hide();
+        })
+    })
+</script>

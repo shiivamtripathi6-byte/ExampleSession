@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/VendorZone.cshtml";
+}
+@using System.Data;
+@using System.Data.SqlClient;
+@using DemoApp25.Models;
+<link href="~/Content/Dashboard.css" rel="stylesheet" />
+
+<div class="row" style="background-color:lightgray">
+    <div class="col-3"></div>
+    <div class="col-9" style="margin:4%">
+        <div class="row">
+            <div class="col-1"><span class="fa fa-user-circle-o fa-8x text-danger"></span></div>
+            <div class="col-8" style="padding-left:5%">
+                @{
+                    var id = Session["vid"];
+                    string cmd = "select * from Vendor where Vlocation='" + id + "'";
+                    DataTable dt = DatabaseManager.DispalyAllRecords(cmd);
+                    if(dt.Rows.Count > 0)
+                    {
+                        <span class="text text-dark" style="font-size:25px">Welcome : @dt.Rows[0]["Vname"]</span>
+                        <span class="text text-dark" style="font-size:25px">Email : @dt.Rows[0]["Vemail"]</span>
+                    <br />
+                        <span class="text text-dark" style="font-size:25px">Contact : @dt.Rows[0]["Vmobile"]</span>
+                        <span class="text text-dark" style="font-size:25px">Location : @dt.Rows[0]["Vlocation"]</span>
+                    }
+                    else
+                    {
+                        <h4>No Record found here</h4>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-4">
+    <h2 class="fw-bold text-center text-primary mb-4">Welcome Vendor 👋</h2>
+
+    <div class="row g-4">
+
+        <!-- Total Destination -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="dash-card bg-gradient-purple">
+                <i class="fa fa-map dash-icon"></i>
+                <div class="dash-title">Total Destinations</div>
+                <h3 class="fw-bold mt-2">300</h3>
+            </div>
+        </div>
+
+        <!-- Add Destination -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Add_places","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-blue">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">Add Destination</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Add_Hotel","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-green">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">Add Hotel</div>
+                </div>
+            </a>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Add_Hotel_Picture","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-purple">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">Add Hotel picture</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Change_Password","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-blue">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">Change Password</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- View Complaints -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("View_Complain","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-orange">
+                    <i class="fa fa-comments dash-icon"></i>
+                    <div class="dash-title">View Complaints</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("ViewDestination","Manager")" class="dashboard-link">
+                <div class="dash-card bg-gradient-blue">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">View Destination</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Complain","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-purple">
+                    <i class="fa fa-plus-square dash-icon"></i>
+                    <div class="dash-title">Complain</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Profile -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Vendor_Profile","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-green">
+                    <i class="fa fa-user dash-icon"></i>
+                    <div class="dash-title">My Profile</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Settings -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="dash-card bg-gradient-blue">
+                <i class="fa fa-cog dash-icon"></i>
+                <div class="dash-title">Settings</div>
+            </div>
+        </div>
+
+        <!-- Logout -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+            <a href="@Url.Action("Logout","Vendor")" class="dashboard-link">
+                <div class="dash-card bg-gradient-red">
+                    <i class="fa fa-sign-out dash-icon"></i>
+                    <div class="dash-title">Logout</div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,89 @@
+﻿@model ExampleSession.Models.Home.UserRegistration
+
+@{
+    ViewBag.Title = "UserRegistration";
+    Layout = "~/Views/Shared/GeneralZone.cshtml";
+
+    string cmd = "select * from country";
+    DataTable dt = DatabaseManager.DispalyAllRecords(cmd);
+}
+@using System.Data;
+@using System.Data.SqlClient;
+@using DemoApp25.Models;
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="box-shadow:0px 0px 10px 0px grey; padding:5%; margin-top:2%">
+        <h1 class="text text-success" style="font-family: 'Monotype Corsiva'; font-weight:bolder"><span class="fa fa-key"></span>Registration Panel Here</h1>
+        <hr style="background:maroon; height:3px" />
+        @using (Html.BeginForm("UserRegistration", "Home", FormMethod.Post))
+        {
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Name, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Mobile)
+            @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Mobile, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Adhar)
+            @Html.TextBoxFor(model => model.Adhar, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Adhar, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Address)
+            @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Address, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.Country)
+            @Html.DropDownListFor(model => model.Country, new SelectList(dt.AsDataView(), "cid", "cname"), "Select Country", new { @class = "form-control", id = "ddlcountry" })
+            @Html.ValidationMessageFor(model => model.Country, "", new { style = "color:red" })
+
+            @Html.LabelFor(model => model.State)
+            @Html.DropDownListFor(model => model.State, new List<SelectListItem>(), "Select State", new { @class = "form-control", id = "ddlstate" })
+
+
+            @Html.LabelFor(model => model.District)
+            @Html.DropDownListFor(model => model.District, new List<SelectListItem>(), "Select District", new { @class = "form-control", id = "ddldistrict" })
+            <br />
+            <button class="btn btn-primary form-floating form-control form-control-lg">
+                <span class="text-light"></span>
+                Registration Now
+            </button>
+            <br />
+            <h3 style="color:green">@ViewBag.msg</h3>
+        }
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        //alert("OK")
+        $("#ddlcountry").change(function () {
+            var ddl = $("#ddlcountry").val();//india
+            $.ajax({
+                type: "Post",
+                url: "/Home/DDlState/",
+                data: { Country: ddl },
+                success: function (data) {
+                    $("#ddlstate").empty();
+                    $("#ddlstate").append(data);
+                }
+            })
+        })
+        //code for add district
+        $("#ddlstate").change(function () {
+            var ddl = $("#ddlstate").val();//india
+            $.ajax({
+                type: "Post",
+                url: "/Home/DDlDistrict/",
+                data: { State: ddl },
+                success: function (data) {
+                    $("#ddldistrict").empty();
+                    $("#ddldistrict").append(data);
+                }
+            })
+        })
+    })
+</script>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<ExampleSession.Models.Vendor.Vendor_Default>
+@{
+    ViewBag.Title = "View_Vendor_Details";
+    Layout = "~/Views/Shared/ManagerZone.cshtml";
+}
+<link href="~/Content/akash.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <h2 class="text-center text-danger text">View Vendor Details</h2>  
+        <hr />
+        <table class="table table-responsive" id="example">
+            <thead class="table-striped">
+                <tr style="background:orangered; color:white">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Adhar</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.Vendor_Name</td>
+                        <td>@i.Vendor_Email</td>
+                        <td>@i.Vendor_mobile</td>
+                        <td>@i.Vendor_adhar</td>
+                        <td>@i.Vendor_Location</td>
+                        <td>@ViewBag.dt</td>
+                        <td>@ViewBag.status</td>
+                        <td>
+                            <a href="/Manager/UpdateVendorDetails?up=@i.Vendor_Location" class="btn btn-info text-light">Update</a>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+</div>
+    <div class="col-1"></div>
+</div>
+<script src="~/scripts/akash.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#example").DataTable();
+    });
+</script>

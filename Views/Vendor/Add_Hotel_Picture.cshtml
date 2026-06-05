@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Add_Hotel_Picture";
+    Layout = "~/Views/Shared/VendorZone.cshtml";
+}
+@using System.Data;@using System.Data.SqlClient;@using DemoApp25.Models;
+<div class="row">
+<div class="col-4"></div>
+<div class="col-4">
+    <h3>Add_Hotel_Picture</h3>
+    <hr />
+    <form action="/Vendor/Add_Hotel_Picture" method="post" enctype="multipart/form-data">
+    Select Location
+    <select class="form-control" name="ddlname">
+        @{
+            var id = Session["vid"];
+            string cmd = "select * from Hotel where hlocation='" + id + "'";
+            DataTable dt = DatabaseManager.DispalyAllRecords(cmd);
+            if(dt.Rows.Count>0)
+            {
+                for(int i=0;i<dt.Rows.Count;i++)
+                {
+                    <option>@dt.Rows[i]["hlocation"]</option>
+                }
+            }
+            else
+            {
+                <option>No Record found Here</option>
+            }
+        }
+    </select>
+    Choose Picture
+    <input type="file" name="pic" class="form-control" />
+    <br />
+    <input type="submit" class="btn btn-danger" value="Add Hotel Picture" /> 
+    </form>
+</div>
+    <div class="col-4"></div>
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model ExampleSession.Models.Vendor.Vendor_Default
+@{
+    ViewBag.Title = "UpdateVendorDetails";
+    Layout = "~/Views/Shared/ManagerZone.cshtml";
+}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4" style="margin-top:2%;padding:3%">
+        <h3>Update Vendor Details</h3>
+        <hr />
+        @using(Html.BeginForm("UpdateVendorDetails","Manager",FormMethod.Post))
+        {
+            @Html.Label("Vendor Location");
+            @Html.TextBoxFor(model => model.Vendor_Location, new { @class="form-control",Readonly=true})
+             @Html.Label("Vendor Name");
+            @Html.TextBoxFor(model => model.Vendor_Name, new { @class="form-control"})
+             @Html.Label("Vendor Email");
+            @Html.TextBoxFor(model => model.Vendor_Email, new { @class="form-control"})
+             @Html.Label("Vendor Mobile");
+            @Html.TextBoxFor(model => model.Vendor_mobile, new { @class="form-control" })
+            <br />
+            <input type="submit" class="form-control btn btn-danger" value="Update Now" />
+            <br />
+            <h3>@ViewBag.msg</h3>  
+        }
+    </div>
+</div>

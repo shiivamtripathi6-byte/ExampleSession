@@ -1,0 +1,15 @@
+﻿@model ExampleSession.Models.Home.Contact
+@{
+    ViewBag.Title = "View_Contact";
+    Layout = "~/Views/Shared/AdminZone.cshtml";
+}
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h2 class="text-center text-danger fa fa-power-off">View Contact Details</h2>
+        <hr />
+        @Html.Raw(@ViewBag.show)
+    </div>
+    <div class="col-2"></div>
+</div>

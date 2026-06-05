@@ -1,0 +1,69 @@
+﻿@model ExampleSession.Models.Vendor.Add_Destination
+@{
+    ViewBag.Title = "Add_places";
+    Layout = "~/Views/Shared/VendorZone.cshtml";
+}
+
+<h2 class="text-center" style="padding:4%;">Add_places</h2>
+<hr />
+<br />
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      @using (Html.BeginForm("Add_places", "Vendor", FormMethod.Post, new { enctype="multipart/form-data"}))
+      {
+          @Html.AntiForgeryToken()
+          @Html.ValidationSummary(true)
+          
+          <div class="editor-label">
+              @Html.LabelFor(model => model.Destination_Name)
+          </div>
+          
+          <div class="editor-field">
+              @Html.TextBoxFor(model => model.Destination_Name, new { @class="form-control"})
+              @Html.ValidationMessageFor(model => model.Destination_Name)
+          </div>
+          
+          <div class="editor-label">
+              @Html.LabelFor(model => model.price)
+          </div>
+          
+          <div class="editor-field">
+              @Html.TextBoxFor(model => model.price, new { @class="form-control"})
+              @Html.ValidationMessageFor(model => model.price)
+          </div>
+          
+          <div class="editor-label">
+              @Html.LabelFor(model => model.about)
+          </div>
+          
+        <div class="editor-field">
+              @Html.TextBoxFor(model => model.about, new { @class="form-control"})
+              @Html.ValidationMessageFor(model => model.about)
+          </div>
+            
+            <div class="editor-label">
+              @Html.LabelFor(model => model.image)
+          </div>
+          
+          <div class="editor-field">
+              @Html.TextBoxFor(model => model.image, new { @class="form-control", type="file"})
+              @Html.ValidationMessageFor(model => model.image)
+          </div>
+          
+         <div class="editor-label">
+              @Html.LabelFor(model => model.duration)
+          </div> 
+          
+          <div class="editor-field">
+              @Html.TextBoxFor(model => model.duration, new { @class="form-control"})
+              @Html.ValidationMessageFor(model => model.duration)
+          </div>
+          <br />
+          <p>
+              <input type="submit" value="Add Destination" class="btn btn-danger" /> 
+          </p>
+          <h3>@ViewBag.msg</h3>
+      }
+    </div>
+</div>
